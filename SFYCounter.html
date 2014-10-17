@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>STEMs for Youth Visitor Counter</title>
+
+    		<script type="text/javascript">
+			var numVisitors = 0;
+			var nextWinner = Math.ceil(Math.random() * 15);							// Generate the first random winner
+
+			function OnKeyPressCounter (event) {
+				if (event.keyCode==45){												// Decrement the counter if someone presses the minus sign
+					numVisitors--;													// Helpful for when pesky kids hit the button too many times
+				}
+				else {
+					numVisitors++;													// Increment the counter variable to the next value to count the visitor
+				}
+
+				document.getElementById("visitCounter").innerHTML = numVisitors;	// Update the counter on the screen
+	
+				if (numVisitors==nextWinner) {										// Have we reached the next winning number?
+
+					document.getElementById("YouWin").hidden=false;					// Show the congratulations message
+					setTimeout("hideWinnerLabel()", 5000);  						// Make the congratulations message go away in 5 seconds
+
+					new Audio('cheer.wav').play();  								// Play a sound.  Have the sound file in the same folder as the HTML file.
+					
+					nextWinner=numVisitors + Math.ceil(Math.random() * 15) ;   		// Calculate the next winning number. 
+				}
+			}
+
+			function hideWinnerLabel () {
+				clearTimeout();														// Turn off the timer otherwise it will fire every 5 seconds
+				document.getElementById("YouWin").hidden=true;						// Hide the message
+			}
+    		</script>
+        
+        <style>
+        body {
+                background-color: #AD43DE;
+                height: 100%;
+                font: 100% tahoma;
+                color: #fff;
+            }
+        #main {
+               
+            }
+        #footer {
+                background-color: #fff;
+                margin-left:-5%;
+                margin-right: -5%;
+                width: 110%;
+                position: fixed;
+                bottom: 0;
+                text-align: left;
+                padding-left: 5%;
+            }
+        #header { 
+               
+            }
+        h1 {
+                font: 270% tahoma;
+                color: #720EA1;
+                font-weight: bold;
+            }
+        #circle {
+                float: left;
+                margin-right: auto;
+                margin-left: auto;
+                background-color: #720EA1;
+                width: 30%;
+            }
+            
+        h2 {
+                font: 130% tahoma;
+                margin: 0%;
+                text-transform: uppercase;
+            }
+        #YouWin {
+                font: 700% tahoma;
+                color: #fff;
+                border-bottom: 150% solid #720EA1;
+            }
+            #contain {
+                width: 100%;
+            }
+            #one {
+                float: left;
+                width: 30%;
+               text-align: right;
+                margin-right: 5%;
+                padding-top: 3%;
+              
+            }
+            #two {
+                float: left;
+                width: 30%;
+               text-align: left;
+                margin-left: 5%;
+                padding-top: 3%;
+            }
+            #clear {
+                clear: both;
+            }
+           
+        </style>
+	</head>
+    
+
+	<body align=center onkeypress="OnKeyPressCounter (event)">
+
+    <div id ="main">
+<h1>Welcome to the STEMs for Youth Booth
+    <br>at Brickfest 2014</h1>
+Press the glowing button once to be counted and for a chance to win!
+<br><br>
+<h2>Number of Visitors Today:</h2>        
+<br> <div id ="contain">
+        <div id ="one"><img src ="SFYtransp.png"></div><div id = "circle"><span style="font-size:1000%; color:#fff;" id=visitCounter>0</span></div>
+        <div id ="two"><img src ="SFYtransp.png"></div></div>
+        <div id = "clear"></div>
+<br>
+<span id=YouWin hidden=true>YOU WIN!</span>
+<br>
+<div id = "footer">
+<img src="BFL-Logo1.jpg" height = "15%" width = "15%">
+</div>
+    </div>
+</html>
