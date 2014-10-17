@@ -5,17 +5,24 @@
 
     		<script type="text/javascript">
 			var numVisitors = 0;
-			var nextWinner = Math.ceil(Math.random() * 15);							// Generate the first random winner
+			
+			// Generate the first random winner
+			var nextWinner = Math.ceil(Math.random() * 15);							
 
 			function OnKeyPressCounter (event) {
-				if (event.keyCode==45){												// Decrement the counter if someone presses the minus sign
-					numVisitors--;													// Helpful for when pesky kids hit the button too many times
+				
+				if (event.keyCode==45){		
+					// Decrement the counter if someone presses the minus sign
+					// Helpful for when pesky kids hit the button too many times
+					numVisitors--;													
 				}
 				else {
-					numVisitors++;													// Increment the counter variable to the next value to count the visitor
+					// Increment the counter variable to the next value to count the visitor
+					numVisitors++;													
 				}
 
-				document.getElementById("visitCounter").innerHTML = numVisitors;	// Update the counter on the screen
+				// Update the counter on the screen
+				document.getElementById("visitCounter").innerHTML = numVisitors;	
 	
 				if (numVisitors==nextWinner) {										// Have we reached the next winning number?
 
