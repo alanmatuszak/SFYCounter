@@ -1,0 +1,69 @@
+<style>
+        body {
+                background-color: #AD43DE;
+                height: 100%;
+                font: 100% tahoma;
+                color: #fff;
+            }
+        #main {
+               
+            }
+        #footer {
+                background-color: #fff;
+                margin-left:-5%;
+                margin-right: -5%;
+                width: 110%;
+                position: fixed;
+                bottom: 0;
+                text-align: left;
+                padding-left: 5%;
+            }
+        #header { 
+               
+            }
+        h1 {
+                font: 270% tahoma;
+                color: #720EA1;
+                font-weight: bold;
+            }
+        #circle {
+                float: left;
+                margin-right: auto;
+                margin-left: auto;
+                background-color: #720EA1;
+                width: 30%;
+            }
+            
+        h2 {
+                font: 130% tahoma;
+                margin: 0%;
+                text-transform: uppercase;
+            }
+        #YouWin {
+                font: 700% tahoma;
+                color: #fff;
+                border-bottom: 150% solid #720EA1;
+            }
+            #contain {
+                width: 100%;
+            }
+            #one {
+                float: left;
+                width: 30%;
+               text-align: right;
+                margin-right: 5%;
+                padding-top: 3%;
+              
+            }
+            #two {
+                float: left;
+                width: 30%;
+               text-align: left;
+                margin-left: 5%;
+                padding-top: 3%;
+            }
+            #clear {
+                clear: both;
+            }
+           
+        </style>
