@@ -24,20 +24,26 @@
 				// Update the counter on the screen
 				document.getElementById("visitCounter").innerHTML = numVisitors;	
 	
-				if (numVisitors==nextWinner) {										// Have we reached the next winning number?
+				// Have we reached the next winning number?
+				if (numVisitors==nextWinner) {										
+					// Show the congratulations message
+					document.getElementById("YouWin").hidden=false;		
+					// Make the congratulations message go away in 5 seconds
+					setTimeout("hideWinnerLabel()", 5000);  						
 
-					document.getElementById("YouWin").hidden=false;					// Show the congratulations message
-					setTimeout("hideWinnerLabel()", 5000);  						// Make the congratulations message go away in 5 seconds
+					// Play a sound.  Have the sound file in the same folder as the HTML file.
+					new Audio('cheer.wav').play();  								
 
-					new Audio('cheer.wav').play();  								// Play a sound.  Have the sound file in the same folder as the HTML file.
-					
-					nextWinner=numVisitors + Math.ceil(Math.random() * 15) ;   		// Calculate the next winning number. 
+					// Calculate the next winning number. 
+					nextWinner=numVisitors + Math.ceil(Math.random() * 15) ;   		
 				}
 			}
 
 			function hideWinnerLabel () {
-				clearTimeout();														// Turn off the timer otherwise it will fire every 5 seconds
-				document.getElementById("YouWin").hidden=true;						// Hide the message
+				// Turn off the timer otherwise it will fire every 5 seconds
+				clearTimeout();	
+				// Hide the message
+				document.getElementById("YouWin").hidden=true;						
 			}
     		</script>
         
