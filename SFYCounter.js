@@ -6,15 +6,11 @@ var nextWinner = Math.ceil(Math.random() * 15);
 
 function OnKeyPressCounter (event) {
 				
-	if (event.keyCode==minusKey){		
-		// Decrement the counter if someone presses the minus sign
-		// Helpful for when pesky kids hit the button too many times
-		numVisitors--;													
-	}
-	else {
-		// Increment the counter variable to the next value to count the visitor
-		numVisitors++;													
-	}
+	// Decrement the counter if someone presses the minus sign
+	// Helpful for when pesky kids hit the button too many times
+	if (event.keyCode==minusKey) numVisitors--;			
+	// Increment the counter variable to the next value to count the visitor
+	else numVisitors++;	
 
 	// Update the counter on the screen
 	document.getElementById("visitCounter").innerHTML = numVisitors;	
